@@ -1,0 +1,59 @@
+Q 2)write a program in c to implement pusp and pop operations in a stack
+//Answer
+#include <stdio.h>
+
+#include <stdbool.h>
+
+#define MAX_SIZE 100
+
+int stack[MAX_SIZE];
+int top = -1;
+
+// Function to push an element onto the stack
+void push(int value) {
+    if (top >= MAX_SIZE - 1) {
+        printf("Stack Overflow\n");
+        return;
+    }
+    stack[++top] = value;
+}
+
+// Function to pop an element from the stack
+int pop() {
+    if (top == -1) {
+        printf("Stack Underflow\n");
+        return -1; // Error value, you can customize this as needed
+    }
+    return stack[top--];
+}
+
+// Function to check if the stack is empty
+bool isEmpty() {
+    return top == -1;
+}
+
+// Function to peek the top element of the stack without removing it
+int peek() {
+    if (isEmpty()) {
+        printf("Stack is empty\n");
+        return -1; // Error value, you can customize this as needed
+    }
+    return stack[top];
+}
+
+int main() {
+    push(5);
+    push(10);
+    push(15);
+
+    printf("Top element of stack: %d\n", peek());
+
+    printf("Popping elements from stack: \n");
+    while (!isEmpty()) {
+        printf("%d\n", pop());
+    }
+
+    printf("After popping, stack is empty: %s\n", isEmpty() ? "true" : "false");
+
+    return 0;
+}
