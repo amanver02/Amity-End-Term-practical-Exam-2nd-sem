@@ -1,4 +1,4 @@
-//Q 1) write a program in c to implement bubble sort algorithm on the given list:
+ //Q 1) write a program in c to implement bubble sort algorithm on the given list:
 [5,15,50,20,3,19,4,6,56,54]
 //Answer 
 #include <stdio.h>
